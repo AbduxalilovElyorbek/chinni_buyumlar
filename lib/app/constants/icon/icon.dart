@@ -17,10 +17,23 @@ class AppIcons {
   static String notifications = 'assets/icons/notifications_icon.svg';
   static String order = 'assets/icons/order_icon.svg';
   static String profile = 'assets/icons/profile_icon.svg';
+  static String personField = 'assets/icons/person.svg';
   static String search = 'assets/icons/search_icon.svg';
   static String settings = 'assets/icons/settings_icon.svg';
   static String shop = 'assets/icons/shop_icon.svg';
+  static String shopField = 'assets/icons/shop.svg';
   static String star = 'assets/icons/star_icon.svg';
   static String transactions = 'assets/icons/transactions_icon.svg';
+  static String eye = 'assets/icons/eye_icon.svg';
   static String searchWithCamera = 'assets/icons/with_camera_icon.svg';
+  static String menu = 'assets/icons/menu_icon.svg';
+  static String choosedMenu = 'assets/icons/choosed_menu_icon.svg';
+  static String choosedHome = 'assets/icons/choosed_home_icon.svg';
+  static String choosedBasket = 'assets/icons/choosed_basket_icon.svg';
+  static String choosedProfile = 'assets/icons/choosed_profile_icon.svg';
+  static String choosedHeart = 'assets/icons/choosed_heart_icon.svg';
+  static String arrowBottom = 'assets/icons/bottom_icon.svg';
+  static String add = 'assets/icons/add_icon.svg';
+  static String remove = 'assets/icons/remove_icon.svg';
+  static String trash = 'assets/icons/trash_icon.svg';
 }

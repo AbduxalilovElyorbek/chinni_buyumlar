@@ -5,6 +5,8 @@ void main() {
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   runApp(const MyApp());
+
+  FlutterNativeSplash.remove();
 }
 
 class MyApp extends StatelessWidget {
@@ -12,12 +14,40 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("App"),
-        ),
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp(
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            textTheme: TextTheme(
+              titleLarge: TextStyle(
+                fontSize: 25.sp,
+                color: dark,
+              ),
+              titleMedium: TextStyle(
+                fontSize: 24.sp,
+                color: dark,
+              ),
+              titleSmall: TextStyle(
+                fontSize: 21.sp,
+                color: dark,
+              ),
+              bodyLarge: TextStyle(
+                fontSize: 15.sp,
+                color: dark,
+              ),
+              bodyMedium: TextStyle(
+                fontSize: 13.sp,
+                color: dark,
+              ),
+            ),
+          ),
+          home: const LoginScreen(),
+        );
+      },
     );
   }
 }

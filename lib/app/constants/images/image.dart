@@ -4,4 +4,5 @@ class AppImages {
   static String category = 'assets/images/category.png';
   static String item = 'assets/images/item.png';
   static String radius = 'assets/images/radius.png';
+  static String basket = 'assets/images/basket_item.png';
 }
