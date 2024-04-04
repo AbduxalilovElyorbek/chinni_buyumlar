@@ -27,8 +27,9 @@ class GridListWidget extends StatelessWidget {
         itemCount: 8,
         itemBuilder: (context, index) {
           if (type == "product") {
-            return const SizedBox(
-              child: DefItemWidget(
+            return SizedBox(
+              height: 280.h,
+              child: const DefItemWidget(
                 isDiscount: true,
               ),
             );
@@ -40,35 +41,6 @@ class GridListWidget extends StatelessWidget {
             return const MarketItemWidget(
               title: "Miss Light",
               subTitle: "Ваш Проводник\nСвета",
-            );
-          } else if (type == "categories") {
-            return InkWell(
-              onTap: () {
-                hasNavigator != null
-                    ? Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SubdirectoryScreen(
-                            title: "Осветительные приборы",
-                          ),
-                        ),
-                      )
-                    : hasProducts != null
-                        ? Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const PressedScreen(
-                                title: "Популярные товары",
-                                type: "product",
-                              ),
-                            ),
-                          )
-                        : null;
-              },
-              child: const CategoryItemWidget(
-                isHigh: false,
-                text: "Осветительные Приборы",
-              ),
             );
           }
           return null;

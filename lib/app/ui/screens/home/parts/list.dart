@@ -73,10 +73,15 @@ class ListWidget extends StatelessWidget {
               );
             },
             itemBuilder: (context, index) {
-              return DefItemWidget(
-                hasDiscount: hasDiscount,
-                color: color,
-                isDiscount: showDiscount,
+              return InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemScreen(),),);
+                },
+                child: DefItemWidget(
+                  hasDiscount: hasDiscount,
+                  color: color,
+                  isDiscount: showDiscount,
+                ),
               );
             },
           ),

@@ -1,6 +1,7 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
 import 'package:chinni_buyumlar/app/ui/screens/filter/widgets/drop_down_button.dart';
 import 'package:chinni_buyumlar/app/ui/screens/filter/widgets/field.dart';
+import 'package:chinni_buyumlar/app/ui/widgets/back_widget.dart';
 import 'package:flutter_xlider/flutter_xlider.dart';
 
 class FilterScreen extends StatefulWidget {
@@ -30,14 +31,7 @@ class _FilterScreenState extends State<FilterScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: SvgPicture.asset(
-            AppIcons.arrowBack,
-          ),
-        ),
+        leading: const BackWidget(),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -69,7 +63,14 @@ class _FilterScreenState extends State<FilterScreen> {
                       children: [
                         Padding(
                           padding: EdgeInsets.only(bottom: 20.h, top: 10.h),
-                          child: const DropDownButton(),
+                          child: SizedBox(
+                            width: 160.w,
+                            child: const DropDownButton(
+                              items: [
+                                "Сум",
+                              ],
+                            ),
+                          ),
                         ),
                       ],
                     ),

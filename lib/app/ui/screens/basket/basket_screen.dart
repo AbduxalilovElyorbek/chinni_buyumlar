@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:chinni_buyumlar/app/ui/screens/placing/plecing_screen.dart';
 
 class BasketScreen extends StatefulWidget {
   const BasketScreen({super.key});
@@ -118,7 +119,22 @@ class _BasketScreenState extends State<BasketScreen> {
               ),
               SizedBox(height: 30.h),
               const BasketListWidget(),
-              SizedBox(height: MediaQuery.of(context).padding.bottom + 20.h),
+              ButtonWidget(
+                func: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const PlacingScreen();
+                      },
+                    ),
+                  );
+                },
+                text: "Продолжить оформление",
+                start: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+              SizedBox(height: MediaQuery.of(context).padding.bottom + 40.h),
             ],
           ),
         ),

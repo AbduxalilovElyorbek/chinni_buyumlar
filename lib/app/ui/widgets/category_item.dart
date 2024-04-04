@@ -1,28 +1,29 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
 
 class CategoryItemWidget extends StatelessWidget {
-  const CategoryItemWidget(
-      {super.key, required this.text, required this.isHigh});
+  const CategoryItemWidget({
+    super.key,
+    required this.text,
+  });
   final String text;
-  final bool isHigh;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: isHigh ? 180.w : 115.w,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            height: isHigh ? 170.h : 110.h,
+            width: 180.w,
+            height: 170.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.r),
               image: DecorationImage(
                 image: AssetImage(
                   AppImages.category,
                 ),
-                fit: BoxFit.fitHeight,
+                fit: BoxFit.cover,
               ),
             ),
           ),

@@ -27,11 +27,11 @@ class ButtonWidget extends StatelessWidget {
     return InkWell(
       onTap: func,
       child: Container(
-        height: 43.h,
+        height: 55.h,
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(
-            18.r,
+            45.r,
           ),
           gradient: backgroundColor,
         ),

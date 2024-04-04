@@ -1,5 +1,4 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/filter/filter_screen.dart';
 
 class PressedScreen extends StatelessWidget {
   const PressedScreen({
@@ -18,12 +17,7 @@ class PressedScreen extends StatelessWidget {
         elevation: 0,
         surfaceTintColor: transparent,
         automaticallyImplyLeading: false,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: SvgPicture.asset(AppIcons.arrowBack),
-        ),
+        leading: const BackWidget(),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w),

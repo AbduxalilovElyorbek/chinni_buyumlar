@@ -2,7 +2,7 @@ class AppIcons {
   static String arrowBack = 'assets/icons/arrow_back_icon.svg';
   static String arrowForward = 'assets/icons/arrow_forward_icon.svg';
   static String basket = 'assets/icons/basket_icon.svg';
-  static String discount = 'assets/icons/disount_icon.svg';
+  static String discount = 'assets/icons/discount_icon.svg';
   static String dish = 'assets/icons/dish.svg';
   static String eng = 'assets/icons/eng_icon.svg';
   static String ru = 'assets/icons/ru_icon.svg';
@@ -21,6 +21,7 @@ class AppIcons {
   static String search = 'assets/icons/search_icon.svg';
   static String settings = 'assets/icons/settings_icon.svg';
   static String shop = 'assets/icons/shop_icon.svg';
+  static String profileShop = 'assets/icons/profile_shop.svg';
   static String shopField = 'assets/icons/shop.svg';
   static String star = 'assets/icons/star_icon.svg';
   static String transactions = 'assets/icons/transactions_icon.svg';
@@ -35,5 +36,8 @@ class AppIcons {
   static String arrowBottom = 'assets/icons/bottom_icon.svg';
   static String add = 'assets/icons/add_icon.svg';
   static String remove = 'assets/icons/remove_icon.svg';
+  static String filledStar = 'assets/icons/filled_star_icon.svg';
   static String trash = 'assets/icons/trash_icon.svg';
+  static String close = 'assets/icons/close_icon.svg';
+  static String exit = 'assets/icons/exit_icon.svg';
 }

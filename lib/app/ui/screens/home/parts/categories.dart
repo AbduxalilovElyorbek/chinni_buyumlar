@@ -31,7 +31,7 @@ class CategoriesList extends StatelessWidget {
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
             physics: const NeverScrollableScrollPhysics(),
-            padding: EdgeInsets.only(left: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             itemCount: 5,
             separatorBuilder: (context, index) {
               return SizedBox(
@@ -40,7 +40,6 @@ class CategoriesList extends StatelessWidget {
             },
             itemBuilder: (context, index) {
               return const CategoryItemWidget(
-                isHigh: true,
                 text: 'Осветительные Приборы',
               );
             },

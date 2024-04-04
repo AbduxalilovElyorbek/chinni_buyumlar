@@ -16,7 +16,6 @@ class DefItemWidget extends StatefulWidget {
 }
 
 class _DefItemWidgetState extends State<DefItemWidget> {
-  late bool isChoosed = false;
 
   @override
   Widget build(BuildContext context) {
@@ -73,23 +72,7 @@ class _DefItemWidgetState extends State<DefItemWidget> {
                             ),
                           )
                         : const SizedBox(),
-                    InkWell(
-                      onTap: () {
-                        isChoosed = !isChoosed;
-                        setState(() {});
-                      },
-                      child: Container(
-                        height: 44.h,
-                        padding: const EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.r),
-                          color: isChoosed ? green : transparent,
-                        ),
-                        child: SvgPicture.asset(
-                          AppIcons.heart,
-                        ),
-                      ),
-                    ),
+                    const FavoriteWidget(),
                   ],
                 ),
               ),

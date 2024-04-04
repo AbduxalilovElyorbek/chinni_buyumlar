@@ -1,4 +1,6 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:chinni_buyumlar/app/ui/screens/favorite/favorite_screen.dart';
+import 'package:chinni_buyumlar/app/ui/screens/profile/profile_screen.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});
@@ -22,21 +24,9 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
   final List pages = [
     const HomeScreen(),
-    Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "ThirdPage",
-        ),
-      ),
-    ),
+    const FavoriteScreen(),
     const BasketScreen(),
-    Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "FourthPage",
-        ),
-      ),
-    ),
+    const ProfileScreen(),
     const CatalogScreen(),
   ];
 
@@ -120,26 +110,25 @@ class _NavigationScreenState extends State<NavigationScreen> {
                   },
                   title: "Корзина",
                 ),
-                if (5 > 0)
-                  Positioned(
-                    right: 1,
-                    top: 0,
-                    child: Container(
-                      padding: const EdgeInsets.all(2.0),
-                      decoration: BoxDecoration(
-                        color: orange,
-                        borderRadius: BorderRadius.circular(15.r),
-                      ),
-                      width: 19.w,
-                      child: Text(
-                        '5',
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              color: white,
-                            ),
-                        textAlign: TextAlign.center,
-                      ),
+                Positioned(
+                  right: 1,
+                  top: 0,
+                  child: Container(
+                    padding: const EdgeInsets.all(2.0),
+                    decoration: BoxDecoration(
+                      color: orange,
+                      borderRadius: BorderRadius.circular(15.r),
+                    ),
+                    width: 19.w,
+                    child: Text(
+                      '5',
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            color: white,
+                          ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
+                ),
               ],
             ),
             BottomItem(

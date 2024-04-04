@@ -49,156 +49,161 @@ class _PasswordRestoreCheckSmsState extends State<PasswordRestoreCheckSms> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              AppIcons.dish,
-              colorFilter: ColorFilter.mode(
-                green,
-                BlendMode.srcIn,
-              ),
+        child: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height,
             ),
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  Text(
-                    "Введите код",
-                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          fontWeight: FontWeight.w700,
-                        ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  AppIcons.dish,
+                  colorFilter: ColorFilter.mode(
+                    green,
+                    BlendMode.srcIn,
                   ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: "Мы отправили код на ",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    color: greyText,
-                                  ),
-                        ),
-                        TextSpan(
-                          text: "+99899 999 99 99",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text(
-                      "Изменить номер",
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            color: lightGreen,
+                ),
+                Column(
+                  children: [
+                    Text(
+                      "Введите код",
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            fontWeight: FontWeight.w700,
                           ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 8.h,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 40.w),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Введите полученный код",
-                          style: Theme.of(context).textTheme.bodyMedium!,
-                        ),
-                        SizedBox(
-                          height: 6.h,
-                        ),
-                        TextFieldWithoutIconWidget(
-                          hasPref: false,
-                          controller: sms,
-                          isCenter: true,
-                          text: "Код подтверждения",
-                        ),
-                        SizedBox(
-                          height: 6.h,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Отправить повторно через 0:${_secondsRemaining == 0 ? 00 : _secondsRemaining}",
-                              style: Theme.of(context).textTheme.bodyLarge!,
-                            ),
-                          ],
-                        )
-                      ],
+                    SizedBox(
+                      height: 10.h,
                     ),
-                  ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(),
-            Column(
-              children: [
-                Text(
-                  "Переотправить",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        color: lightGreyText,
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w700,
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "Мы отправили код на ",
+                            style:
+                                Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                      fontWeight: FontWeight.w500,
+                                      color: greyText,
+                                    ),
+                          ),
+                          TextSpan(
+                            text: "+99899 999 99 99",
+                            style:
+                                Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                          ),
+                        ],
                       ),
-                ),
-                SizedBox(
-                  height: 20.h,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40.w),
-                  child: ButtonWidget(
-                    text: "Подтвердить",
-                    start: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                    func: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const RestoreNewPassword(),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(
+                        "Изменить номер",
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              color: lightGreen,
+                            ),
                       ),
-                    );
-                  },
-                  child: Text(
-                    "Уже зарегистрированы?",
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          color: grey,
-                          fontWeight: FontWeight.w700,
-                        ),
-                  ),
+                    ),
+                    SizedBox(
+                      height: 8.h,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 40.w),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Введите полученный код",
+                            style: Theme.of(context).textTheme.bodyMedium!,
+                          ),
+                          SizedBox(
+                            height: 6.h,
+                          ),
+                          TextFieldWithoutIconWidget(
+                            hasPref: false,
+                            controller: sms,
+                            isCenter: true,
+                            text: "Код подтверждения",
+                          ),
+                          SizedBox(
+                            height: 6.h,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Отправить повторно через 0:${_secondsRemaining == 0 ? 00 : _secondsRemaining}",
+                                style: Theme.of(context).textTheme.bodyLarge!,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                  ],
+                ),
+                const SizedBox(),
+                Column(
+                  children: [
+                    Text(
+                      "Переотправить",
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            color: lightGreyText,
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w700,
+                          ),
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 40.w),
+                      child: ButtonWidget(
+                        text: "Подтвердить",
+                        start: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        func: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const RestoreNewPassword(),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginScreen(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "Уже зарегистрированы?",
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              color: grey,
+                              fontWeight: FontWeight.w700,
+                            ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );

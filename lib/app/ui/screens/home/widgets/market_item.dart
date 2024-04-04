@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:chinni_buyumlar/app/ui/screens/home/widgets/favorite.dart';
 
 class MarketItemWidget extends StatefulWidget {
   const MarketItemWidget({
@@ -14,7 +15,6 @@ class MarketItemWidget extends StatefulWidget {
 }
 
 class _MarketItemWidgetState extends State<MarketItemWidget> {
-  late bool isChoosed = false;
 
   @override
   Widget build(BuildContext context) {
@@ -58,31 +58,15 @@ class _MarketItemWidgetState extends State<MarketItemWidget> {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 top: 6.0,
                 right: 6.0,
                 left: 6.0,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const SizedBox(),
-                    InkWell(
-                      onTap: () {
-                        isChoosed = !isChoosed;
-                        setState(() {});
-                      },
-                      child: Container(
-                        height: 44.h,
-                        padding: const EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.r),
-                          color: isChoosed ? green : transparent,
-                        ),
-                        child: SvgPicture.asset(
-                          AppIcons.heart,
-                        ),
-                      ),
-                    ),
+                    SizedBox(),
+                    FavoriteWidget(),
                   ],
                 ),
               ),

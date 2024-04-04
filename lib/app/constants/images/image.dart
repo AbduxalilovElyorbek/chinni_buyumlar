@@ -5,4 +5,6 @@ class AppImages {
   static String item = 'assets/images/item.png';
   static String radius = 'assets/images/radius.png';
   static String basket = 'assets/images/basket_item.png';
+  static String large = 'assets/images/large_image.png';
+  static String user = 'assets/images/person.png';
 }

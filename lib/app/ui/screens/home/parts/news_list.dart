@@ -52,25 +52,23 @@ class NewsListWidget extends StatelessWidget {
         SizedBox(
           height: 20.h,
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.h),
-          child: Expanded(
-            child: ListView.separated(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.only(left: 20.w),
-              itemCount: 5,
-              separatorBuilder: (context, index) {
-                return SizedBox(
-                  width: 13.w,
-                );
-              },
-              itemBuilder: (context, index) {
-                return const NewsItemWidget(
-                  text: "В текст представили портрет типичного покупателя",
-                );
-              },
-            ),
+        SizedBox(
+          height: 300.h,
+          child: ListView.separated(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            itemCount: 5,
+            separatorBuilder: (context, index) {
+              return SizedBox(
+                width: 13.w,
+              );
+            },
+            itemBuilder: (context, index) {
+              return const NewsItemWidget(
+                text: "В текст представили портрет типичного покупателя",
+              );
+            },
           ),
         ),
       ],

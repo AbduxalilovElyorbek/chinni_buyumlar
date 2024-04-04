@@ -58,7 +58,7 @@ class MarketsListWidget extends StatelessWidget {
           child: ListView.separated(
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(left: 20.w),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             itemCount: 5,
             separatorBuilder: (context, index) {
               return SizedBox(

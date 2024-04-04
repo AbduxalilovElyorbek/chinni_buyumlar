@@ -11,15 +11,18 @@ class ButtonBorderedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 168.w,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-            splashFactory: NoSplash.splashFactory,
-            backgroundColor: transparent,
-            elevation: 0,
-            side: BorderSide(color: green)),
-        onPressed: () {},
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        splashFactory: NoSplash.splashFactory,
+        backgroundColor: transparent,
+        elevation: 0,
+        side: BorderSide(
+          color: green,
+        ),
+      ),
+      onPressed: () {},
+      child: SizedBox(
+        height: 50.h,
         child: Row(
           mainAxisAlignment: icon != null
               ? MainAxisAlignment.spaceAround

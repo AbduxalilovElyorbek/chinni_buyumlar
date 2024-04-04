@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:chinni_buyumlar/app/ui/screens/catalog/parts/catalog_list.dart';
 
 class SubdirectoryScreen extends StatelessWidget {
   const SubdirectoryScreen({super.key, required this.title});
@@ -9,14 +10,7 @@ class SubdirectoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: SvgPicture.asset(
-            AppIcons.arrowBack,
-          ),
-        ),
+        leading: const BackWidget(),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -36,9 +30,8 @@ class SubdirectoryScreen extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              const GridListWidget(
-                type: 'categories',
-                hasProducts: false,
+              const CatalogList(
+                isSub: true,
               ),
             ],
           ),

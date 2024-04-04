@@ -31,78 +31,84 @@ class _CheckPasswordScreenState extends State<CheckPasswordScreen> {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: 20.h,
-              ),
-              SvgPicture.asset(
-                AppIcons.dish,
-                colorFilter: ColorFilter.mode(
-                  green,
-                  BlendMode.srcIn,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 20.h,
                 ),
-              ),
-              SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Text(
-                      "Регистрация",
-                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                            fontWeight: FontWeight.w400,
-                          ),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 40.w),
-                      child: TextFieldWithoutIconWidget(
-                        controller: password,
-                        text: "Введите пароль",
-                        hasPref: true,
-                        icon: AppIcons.eye,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 40.w),
-                      child: TextFieldWithoutIconWidget(
-                        hasPref: true,
-                        controller: checkPassword,
-                        text: "Подтвердите пароль",
-                        icon: AppIcons.eye,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 40.w),
-                      child: ButtonWidget(
-                        func: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const LoginScreen(),
-                            ),
-                          );
-                        },
-                        text: "Далее",
-                        start: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                      ),
-                    ),
-                  ],
+                SvgPicture.asset(
+                  AppIcons.dish,
+                  colorFilter: ColorFilter.mode(
+                    green,
+                    BlendMode.srcIn,
+                  ),
                 ),
-              ),
-              const SizedBox(),
-              const SizedBox(),
-            ],
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Text(
+                        "Регистрация",
+                        style:
+                            Theme.of(context).textTheme.titleMedium!.copyWith(
+                                  fontWeight: FontWeight.w400,
+                                ),
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 40.w),
+                        child: TextFieldWithoutIconWidget(
+                          controller: password,
+                          text: "Введите пароль",
+                          hasPref: true,
+                          icon: AppIcons.eye,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 40.w),
+                        child: TextFieldWithoutIconWidget(
+                          hasPref: true,
+                          controller: checkPassword,
+                          text: "Подтвердите пароль",
+                          icon: AppIcons.eye,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 40.w),
+                        child: ButtonWidget(
+                          func: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LoginScreen(),
+                              ),
+                            );
+                          },
+                          text: "Далее",
+                          start: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(),
+                const SizedBox(),
+              ],
+            ),
           ),
         ),
       ),

@@ -41,55 +41,54 @@ class _RestoreNewPasswordState extends State<RestoreNewPassword> {
                 BlendMode.srcIn,
               ),
             ),
-            Text(
-              "Поменять пароль",
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    fontWeight: FontWeight.w700,
-                  ),
-            ),
-            SingleChildScrollView(
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40.w),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 40.w),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Новый пароль",
-                          style: Theme.of(context).textTheme.bodyLarge!,
-                        ),
-                        SizedBox(
-                          height: 6.h,
-                        ),
-                        TextFieldWithoutIconWidget(
-                          hasPref: false,
-                          controller: newPassword,
-                          text: "",
-                        ),
-                        SizedBox(
-                          height: 15.h,
-                        ),
-                        Text(
-                          "Подтвердите пароль",
-                          style: Theme.of(context).textTheme.bodyLarge!,
-                        ),
-                        SizedBox(
-                          height: 6.h,
-                        ),
-                        TextFieldWithoutIconWidget(
-                          hasPref: false,
-                          controller: checkPassword,
-                          text: "",
-                        ),
-                      ],
+                  Center(
+                    child: Text(
+                      "Поменять пароль",
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            fontWeight: FontWeight.w700,
+                          ),
                     ),
                   ),
                   SizedBox(
-                    height: 20.h,
+                    height: 30.h,
+                  ),
+                  Text(
+                    "Новый пароль",
+                    style: Theme.of(context).textTheme.bodyLarge!,
+                  ),
+                  SizedBox(
+                    height: 6.h,
+                  ),
+                  TextFieldWithoutIconWidget(
+                    hasPref: false,
+                    controller: newPassword,
+                    text: "",
+                  ),
+                  SizedBox(
+                    height: 15.h,
+                  ),
+                  Text(
+                    "Подтвердите пароль",
+                    style: Theme.of(context).textTheme.bodyLarge!,
+                  ),
+                  SizedBox(
+                    height: 6.h,
+                  ),
+                  TextFieldWithoutIconWidget(
+                    hasPref: false,
+                    controller: checkPassword,
+                    text: "",
                   ),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 20.h,
             ),
             const SizedBox(),
             Padding(

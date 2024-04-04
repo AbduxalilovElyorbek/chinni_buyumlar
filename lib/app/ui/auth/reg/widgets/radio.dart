@@ -3,7 +3,11 @@ import 'package:chinni_buyumlar/app/constants/imports.dart';
 class RadioWidget extends StatefulWidget {
   const RadioWidget({
     super.key,
+    this.isCircular,
+    this.value,
   });
+  final bool? isCircular;
+  final bool? value;
 
   @override
   State<RadioWidget> createState() => _RadioWidgetState();
@@ -35,21 +39,38 @@ class _RadioWidgetState extends State<RadioWidget> {
         height: 22.h,
         padding: EdgeInsets.all(2.r),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5.r),
+          borderRadius: widget.isCircular != null
+              ? BorderRadius.circular(50.r)
+              : BorderRadius.circular(5.r),
           border: Border.all(
             color: greyText.withOpacity(0.3),
           ),
         ),
-        child: (_value)
+        child: (widget.value != null && widget.value == true)
             ? Container(
                 height: 20.h,
                 width: 20.w,
                 decoration: BoxDecoration(
                   gradient: backgroundColor,
-                  borderRadius: BorderRadius.circular(5.r),
+                  borderRadius: widget.isCircular != null
+                      ? BorderRadius.circular(50.r)
+                      : BorderRadius.circular(5.r),
                 ),
               )
-            : null,
+            : (widget.value != null && widget.value == false)
+                ? null
+                : (_value)
+                    ? Container(
+                        height: 20.h,
+                        width: 20.w,
+                        decoration: BoxDecoration(
+                          gradient: backgroundColor,
+                          borderRadius: widget.isCircular != null
+                              ? BorderRadius.circular(50.r)
+                              : BorderRadius.circular(5.r),
+                        ),
+                      )
+                    : null,
       ),
     );
   }

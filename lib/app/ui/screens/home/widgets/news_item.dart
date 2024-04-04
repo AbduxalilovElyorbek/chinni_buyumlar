@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:chinni_buyumlar/app/ui/screens/home/widgets/favorite.dart';
 
 class NewsItemWidget extends StatefulWidget {
   const NewsItemWidget({
@@ -12,7 +13,6 @@ class NewsItemWidget extends StatefulWidget {
 }
 
 class _NewsItemWidgetState extends State<NewsItemWidget> {
-  late bool isChoosed = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,31 +38,15 @@ class _NewsItemWidgetState extends State<NewsItemWidget> {
               Image.asset(
                 AppImages.item,
               ),
-              Positioned(
+              const Positioned(
                 top: 6.0,
                 right: 6.0,
                 left: 6.0,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const SizedBox(),
-                    InkWell(
-                      onTap: () {
-                        isChoosed = !isChoosed;
-                        setState(() {});
-                      },
-                      child: Container(
-                        height: 44.h,
-                        padding: const EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8.r),
-                          color: isChoosed ? green : transparent,
-                        ),
-                        child: SvgPicture.asset(
-                          AppIcons.heart,
-                        ),
-                      ),
-                    ),
+                    SizedBox(),
+                    FavoriteWidget(),
                   ],
                 ),
               ),
