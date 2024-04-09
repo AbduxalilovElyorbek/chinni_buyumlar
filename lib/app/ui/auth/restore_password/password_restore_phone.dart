@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class RestorePasswordPhone extends StatefulWidget {
   const RestorePasswordPhone({super.key});
@@ -43,7 +44,7 @@ class _RestorePasswordPhoneState extends State<RestorePasswordPhone> {
               child: Column(
                 children: [
                   Text(
-                    "Восстановить пароль",
+                    LocaleKeys.restore_password.tr(),
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
                           fontWeight: FontWeight.w700,
                         ),
@@ -57,7 +58,7 @@ class _RestorePasswordPhoneState extends State<RestorePasswordPhone> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Номер телефона",
+                          LocaleKeys.phone_number.tr(),
                           style: Theme.of(context).textTheme.bodyLarge!,
                         ),
                         SizedBox(
@@ -81,7 +82,7 @@ class _RestorePasswordPhoneState extends State<RestorePasswordPhone> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.w),
               child: ButtonWidget(
-                text: "Запросить код",
+                text: LocaleKeys.request_code.tr(),
                 start: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 func: () {

@@ -1,8 +1,5 @@
-import 'dart:async';
-
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/auth/restore_password/restore_new_password.dart';
-import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class PasswordRestoreCheckSms extends StatefulWidget {
   const PasswordRestoreCheckSms({super.key});
@@ -68,7 +65,7 @@ class _PasswordRestoreCheckSmsState extends State<PasswordRestoreCheckSms> {
                 Column(
                   children: [
                     Text(
-                      "Введите код",
+                      LocaleKeys.enter_sms.tr(),
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             fontWeight: FontWeight.w700,
                           ),
@@ -80,7 +77,7 @@ class _PasswordRestoreCheckSmsState extends State<PasswordRestoreCheckSms> {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Мы отправили код на ",
+                            text: LocaleKeys.sms_sended.tr(),
                             style:
                                 Theme.of(context).textTheme.bodyLarge!.copyWith(
                                       fontWeight: FontWeight.w500,
@@ -88,7 +85,7 @@ class _PasswordRestoreCheckSmsState extends State<PasswordRestoreCheckSms> {
                                     ),
                           ),
                           TextSpan(
-                            text: "+99899 999 99 99",
+                            text: " +99899 999 99 99",
                             style:
                                 Theme.of(context).textTheme.bodyLarge!.copyWith(
                                       fontWeight: FontWeight.w600,
@@ -102,7 +99,7 @@ class _PasswordRestoreCheckSmsState extends State<PasswordRestoreCheckSms> {
                         Navigator.pop(context);
                       },
                       child: Text(
-                        "Изменить номер",
+                       LocaleKeys.change_num.tr() ,
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                               color: lightGreen,
                             ),
@@ -117,7 +114,7 @@ class _PasswordRestoreCheckSmsState extends State<PasswordRestoreCheckSms> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Введите полученный код",
+                            LocaleKeys.enter_received_code.tr(),
                             style: Theme.of(context).textTheme.bodyMedium!,
                           ),
                           SizedBox(
@@ -127,7 +124,7 @@ class _PasswordRestoreCheckSmsState extends State<PasswordRestoreCheckSms> {
                             hasPref: false,
                             controller: sms,
                             isCenter: true,
-                            text: "Код подтверждения",
+                            text: LocaleKeys.confirm_code.tr(),
                           ),
                           SizedBox(
                             height: 6.h,
@@ -136,7 +133,7 @@ class _PasswordRestoreCheckSmsState extends State<PasswordRestoreCheckSms> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "Отправить повторно через 0:${_secondsRemaining == 0 ? 00 : _secondsRemaining}",
+                                "${LocaleKeys.resend_via.tr()} 00:${_secondsRemaining == 0 ? 00 : _secondsRemaining}",
                                 style: Theme.of(context).textTheme.bodyLarge!,
                               ),
                             ],
@@ -153,7 +150,7 @@ class _PasswordRestoreCheckSmsState extends State<PasswordRestoreCheckSms> {
                 Column(
                   children: [
                     Text(
-                      "Переотправить",
+                      LocaleKeys.resend.tr(),
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             color: lightGreyText,
                             fontSize: 18.sp,
@@ -166,7 +163,7 @@ class _PasswordRestoreCheckSmsState extends State<PasswordRestoreCheckSms> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 40.w),
                       child: ButtonWidget(
-                        text: "Подтвердить",
+                        text: LocaleKeys.confirm.tr(),
                         start: Alignment.bottomCenter,
                         end: Alignment.topCenter,
                         func: () {
@@ -192,7 +189,7 @@ class _PasswordRestoreCheckSmsState extends State<PasswordRestoreCheckSms> {
                         );
                       },
                       child: Text(
-                        "Уже зарегистрированы?",
+                        LocaleKeys.already_registered.tr(),
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                               color: grey,
                               fontWeight: FontWeight.w700,

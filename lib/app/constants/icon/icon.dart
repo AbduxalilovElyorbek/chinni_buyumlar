@@ -40,4 +40,7 @@ class AppIcons {
   static String trash = 'assets/icons/trash_icon.svg';
   static String close = 'assets/icons/close_icon.svg';
   static String exit = 'assets/icons/exit_icon.svg';
+  static String telegram = 'assets/icons/telegram_icon.svg';
+  static String facebook = 'assets/icons/facebook_icon.svg';
+  static String call = 'assets/icons/call_icon.svg';
 }

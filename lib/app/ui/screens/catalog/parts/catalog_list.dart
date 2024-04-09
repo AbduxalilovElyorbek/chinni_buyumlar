@@ -1,5 +1,4 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/catalog/parts/sub_catalog_list.dart';
 
 class CatalogList extends StatelessWidget {
   const CatalogList({super.key, this.isSub});

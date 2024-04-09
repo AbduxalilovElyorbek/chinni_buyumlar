@@ -1,8 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/filter/widgets/drop_down_button.dart';
-import 'package:chinni_buyumlar/app/ui/screens/filter/widgets/field.dart';
-import 'package:chinni_buyumlar/app/ui/widgets/back_widget.dart';
-import 'package:flutter_xlider/flutter_xlider.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class FilterScreen extends StatefulWidget {
   const FilterScreen({super.key});
@@ -14,15 +11,13 @@ class FilterScreen extends StatefulWidget {
 class _FilterScreenState extends State<FilterScreen> {
   late TextEditingController fromController;
   late TextEditingController toController;
-  late double fromValue;
-  late double toValue;
+  double fromValue= 0;
+  double toValue = 50000.0;
 
   @override
   void initState() {
     fromController = TextEditingController();
     toController = TextEditingController();
-    fromValue = 0;
-    toValue = 50000.0;
     super.initState();
   }
 
@@ -46,7 +41,7 @@ class _FilterScreenState extends State<FilterScreen> {
                     horizontal: 20.w,
                   ),
                   child: Text(
-                    "Фильтры",
+                    LocaleKeys.filters.tr(),
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
@@ -56,7 +51,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   height: 15.h,
                 ),
                 DropDownItem(
-                  title: "Валюта",
+                  title: LocaleKeys.currency.tr(),
                   functions: [
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,9 +60,9 @@ class _FilterScreenState extends State<FilterScreen> {
                           padding: EdgeInsets.only(bottom: 20.h, top: 10.h),
                           child: SizedBox(
                             width: 160.w,
-                            child: const DropDownButton(
+                            child:  DropDownButton(
                               items: [
-                                "Сум",
+                                LocaleKeys.sum.tr(),
                               ],
                             ),
                           ),
@@ -80,7 +75,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   color: greyText.withOpacity(0.1),
                 ),
                 DropDownItem(
-                  title: "Цена",
+                  title: LocaleKeys.price.tr(),
                   functions: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,7 +84,7 @@ class _FilterScreenState extends State<FilterScreen> {
                           width: 160.w,
                           child: TextFieldFilter(
                             controller: fromController,
-                            text: 'От',
+                            text: LocaleKeys.from.tr(),
                             func: (text) {
                               final newValue = double.tryParse(text);
                               if (newValue != null) {
@@ -104,7 +99,7 @@ class _FilterScreenState extends State<FilterScreen> {
                           width: 160.w,
                           child: TextFieldFilter(
                             controller: toController,
-                            text: 'До',
+                            text: LocaleKeys.up_to.tr(),
                             func: (text) {
                               final newValue = double.tryParse(text);
                               if (newValue != null) {
@@ -168,8 +163,6 @@ class _FilterScreenState extends State<FilterScreen> {
                       max: 50000,
                       min: 0,
                       onDragging: (handlerIndex, lowerValue, upperValue) {
-                        print("$handlerIndex #handlerIndex");
-                        print("$lowerValue #lowerValue");
                         setState(() {
                           fromValue = lowerValue;
                           toValue = upperValue;
@@ -186,61 +179,44 @@ class _FilterScreenState extends State<FilterScreen> {
                 Divider(
                   color: greyText.withOpacity(0.1),
                 ),
-                const DropDownItem(
-                  title: "Стиль",
-                  functions: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [],
-                    ),
+                 DropDownItem(
+                  title: LocaleKeys.style.tr(),
+                  functions: const [],
+                ),
+                Divider(
+                  color: greyText.withOpacity(0.1),
+                ),
+                DropDownItem(
+                  title: LocaleKeys.number_cartridges.tr(),
+                  functions: const [
+                    
                   ],
                 ),
                 Divider(
                   color: greyText.withOpacity(0.1),
                 ),
-                const DropDownItem(
-                  title: "Кол-во патронов",
-                  functions: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [],
-                    ),
+                DropDownItem(
+                  title: LocaleKeys.color.tr(),
+                  functions: const [
+                   
                   ],
                 ),
                 Divider(
                   color: greyText.withOpacity(0.1),
                 ),
-                const DropDownItem(
-                  title: "Цвет",
-                  functions: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [],
-                    ),
+                 DropDownItem(
+                  title: LocaleKeys.material.tr(),
+                  functions: const [
+                    
                   ],
                 ),
                 Divider(
                   color: greyText.withOpacity(0.1),
                 ),
-                const DropDownItem(
-                  title: "Материал",
-                  functions: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [],
-                    ),
-                  ],
-                ),
-                Divider(
-                  color: greyText.withOpacity(0.1),
-                ),
-                const DropDownItem(
-                  title: "Температура",
-                  functions: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [],
-                    ),
+                 DropDownItem(
+                  title: LocaleKeys.temperature.tr(),
+                  functions: const [
+                    
                   ],
                 ),
               ],
@@ -256,7 +232,7 @@ class _FilterScreenState extends State<FilterScreen> {
                     func: () {
                       Navigator.pop(context);
                     },
-                    text: "Показать ( 2 товара )",
+                    text: "${LocaleKeys.show.tr()} ( 2 товара )",
                     start: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),

@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class PressedScreen extends StatelessWidget {
   const PressedScreen({
@@ -41,10 +42,10 @@ class PressedScreen extends StatelessWidget {
                           fontSize: 17.sp,
                           color: greyText.withOpacity(0.7),
                         ),
-                    items: const [
+                    items:  [
                       DropdownMenuItem(
                         child: Text(
-                          "Популярные",
+                          LocaleKeys.popular.tr(),
                         ),
                       ),
                     ],
@@ -62,7 +63,7 @@ class PressedScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          "Фильтры",
+                          LocaleKeys.filters.tr(),
                           style:
                               Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     fontSize: 17.sp,

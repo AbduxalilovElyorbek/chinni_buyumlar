@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class CheckPasswordScreen extends StatefulWidget {
   const CheckPasswordScreen({super.key});
@@ -53,7 +54,7 @@ class _CheckPasswordScreenState extends State<CheckPasswordScreen> {
                   child: Column(
                     children: [
                       Text(
-                        "Регистрация",
+                        LocaleKeys.register.tr(),
                         style:
                             Theme.of(context).textTheme.titleMedium!.copyWith(
                                   fontWeight: FontWeight.w400,
@@ -66,7 +67,7 @@ class _CheckPasswordScreenState extends State<CheckPasswordScreen> {
                         padding: EdgeInsets.symmetric(horizontal: 40.w),
                         child: TextFieldWithoutIconWidget(
                           controller: password,
-                          text: "Введите пароль",
+                          text: LocaleKeys.enter_password.tr(),
                           hasPref: true,
                           icon: AppIcons.eye,
                         ),
@@ -79,7 +80,7 @@ class _CheckPasswordScreenState extends State<CheckPasswordScreen> {
                         child: TextFieldWithoutIconWidget(
                           hasPref: true,
                           controller: checkPassword,
-                          text: "Подтвердите пароль",
+                          text: LocaleKeys.enter_received_code.tr(),
                           icon: AppIcons.eye,
                         ),
                       ),
@@ -97,7 +98,7 @@ class _CheckPasswordScreenState extends State<CheckPasswordScreen> {
                               ),
                             );
                           },
-                          text: "Далее",
+                          text: LocaleKeys.next.tr(),
                           start: Alignment.centerLeft,
                           end: Alignment.centerRight,
                         ),

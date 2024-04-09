@@ -8,7 +8,7 @@ class CaruselList extends StatefulWidget {
 }
 
 class _CaruselListState extends State<CaruselList> {
-  late int selectedImage = 0;
+  int selectedImage = 0;
 
   @override
   Widget build(BuildContext context) {

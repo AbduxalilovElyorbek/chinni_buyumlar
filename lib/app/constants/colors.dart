@@ -3,6 +3,7 @@ import 'imports.dart';
 Color lightGreen = const Color(0xff7EBB45);
 Color green = const Color(0xff1F9636);
 Color red = const Color(0xffFF0000);
+Color inputColor = const Color(0xffFBFBFB);
 Color grey = const Color(0xff84A9C0);
 Color orange = const Color(0xffFF9500);
 Color white = const Color(0xffFFFFFF);
@@ -20,3 +21,4 @@ Color lightDark = const Color(0xff3F3535);
 Color switcherColor = const Color(0xffEDEDED);
 Color pressedColor = const Color(0xffE6E8E9);
 Color transparent = Colors.transparent;
+

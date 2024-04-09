@@ -1,6 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/item/comments_screen.dart';
-import 'package:chinni_buyumlar/app/ui/screens/item/widgets/star_rating.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ItemScreen extends StatefulWidget {
   const ItemScreen({super.key});
@@ -55,7 +54,7 @@ class _ItemScreenState extends State<ItemScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Артикул: 34579",
+                      "${LocaleKeys.vendor_code}: 34579",
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             color: lightGreyText,
                           ),
@@ -99,11 +98,11 @@ class _ItemScreenState extends State<ItemScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "3.600.000 UZS",
+                      "3.600.000 ${LocaleKeys.sum.tr()}",
                       style: Theme.of(context).textTheme.titleMedium!,
                     ),
                     Text(
-                      "4.500.000 сум",
+                      "4.500.000 ${LocaleKeys.sum.tr()}",
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontSize: 18.sp,
                             color: lightGreyText,
@@ -124,7 +123,7 @@ class _ItemScreenState extends State<ItemScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "Магазин",
+                      LocaleKeys.market.tr(),
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             fontSize: 17.sp,
                             fontWeight: FontWeight.w700,
@@ -159,7 +158,7 @@ class _ItemScreenState extends State<ItemScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Параметры",
+                      LocaleKeys.options.tr(),
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             fontSize: 17.sp,
                             fontWeight: FontWeight.w700,
@@ -169,7 +168,7 @@ class _ItemScreenState extends State<ItemScreen> {
                       height: 8.h,
                     ),
                     Text(
-                      "Цвет:",
+                      "${LocaleKeys.color.tr()}:",
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             color: lightGreyText,
                           ),
@@ -217,15 +216,15 @@ class _ItemScreenState extends State<ItemScreen> {
               Divider(
                 color: greyText.withOpacity(0.5),
               ),
-              const DropDownItem(
-                title: "Описание",
-                functions: [],
+              DropDownItem(
+                title: LocaleKeys.desc.tr(),
+                functions: const [],
               ),
               Divider(
                 color: greyText.withOpacity(0.5),
               ),
               DropDownItem(
-                title: "Характеристики",
+                title: LocaleKeys.characteristics.tr(),
                 functions: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -406,15 +405,15 @@ class _ItemScreenState extends State<ItemScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Оценка и отзывы (2)",
+                      "${LocaleKeys.comments.tr()} (2)",
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             fontSize: 17.sp,
                             fontWeight: FontWeight.w700,
                           ),
                     ),
                     const StarRating(),
-                    IconButton(
-                      onPressed: () {
+                    InkWell(
+                      onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -422,7 +421,7 @@ class _ItemScreenState extends State<ItemScreen> {
                           ),
                         );
                       },
-                      icon: SvgPicture.asset(
+                      child: SvgPicture.asset(
                         AppIcons.arrowForward,
                       ),
                     ),
@@ -474,7 +473,7 @@ class _ItemScreenState extends State<ItemScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
                 child: Text(
-                  "C этим товаром ищут",
+                  LocaleKeys.searching_products.tr(),
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         fontSize: 17.sp,
                         fontWeight: FontWeight.w700,
@@ -518,7 +517,7 @@ class _ItemScreenState extends State<ItemScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              "В корзину",
+                              LocaleKeys.add_basket.tr(),
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge!
@@ -546,8 +545,8 @@ class _ItemScreenState extends State<ItemScreen> {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
-                child: const ButtonBorderedWidget(
-                  text: "Связаться с продавцом",
+                child:  ButtonBorderedWidget(
+                  text: LocaleKeys.contact_seller.tr(),
                 ),
               ),
               SizedBox(

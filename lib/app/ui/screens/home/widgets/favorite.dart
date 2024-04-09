@@ -8,7 +8,7 @@ class FavoriteWidget extends StatefulWidget {
 }
 
 class _FavoriteWidgetState extends State<FavoriteWidget> {
-  late bool isChoosed = false;
+  bool isChoosed = false;
 
   @override
   Widget build(BuildContext context) {

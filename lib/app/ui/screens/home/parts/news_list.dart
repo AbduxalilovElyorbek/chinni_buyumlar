@@ -1,5 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/home/widgets/news_item.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class NewsListWidget extends StatelessWidget {
   const NewsListWidget({
@@ -38,7 +38,7 @@ class NewsListWidget extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  "Все",
+                  LocaleKeys.all.tr(),
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: lightGreen,
                         fontSize: 16.sp,
@@ -53,7 +53,7 @@ class NewsListWidget extends StatelessWidget {
           height: 20.h,
         ),
         SizedBox(
-          height: 300.h,
+          height: 310.h,
           child: ListView.separated(
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,

@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class RestoreNewPassword extends StatefulWidget {
   const RestoreNewPassword({super.key});
@@ -48,7 +49,7 @@ class _RestoreNewPasswordState extends State<RestoreNewPassword> {
                 children: [
                   Center(
                     child: Text(
-                      "Поменять пароль",
+                      LocaleKeys.change_password.tr(),
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             fontWeight: FontWeight.w700,
                           ),
@@ -58,7 +59,7 @@ class _RestoreNewPasswordState extends State<RestoreNewPassword> {
                     height: 30.h,
                   ),
                   Text(
-                    "Новый пароль",
+                    LocaleKeys.new_password.tr(),
                     style: Theme.of(context).textTheme.bodyLarge!,
                   ),
                   SizedBox(
@@ -73,7 +74,7 @@ class _RestoreNewPasswordState extends State<RestoreNewPassword> {
                     height: 15.h,
                   ),
                   Text(
-                    "Подтвердите пароль",
+                    LocaleKeys.confirm_password.tr(),
                     style: Theme.of(context).textTheme.bodyLarge!,
                   ),
                   SizedBox(
@@ -94,7 +95,7 @@ class _RestoreNewPasswordState extends State<RestoreNewPassword> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.w),
               child: ButtonWidget(
-                text: "Продолжить",
+                text: LocaleKeys.continue_checkout.tr(),
                 start: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 func: () {

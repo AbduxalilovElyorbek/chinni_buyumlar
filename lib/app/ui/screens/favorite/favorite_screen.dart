@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({super.key});
@@ -8,7 +9,7 @@ class FavoriteScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Избранные",
+          LocaleKeys.favorites.tr(),
           style: Theme.of(context).textTheme.titleSmall!.copyWith(
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
@@ -26,7 +27,7 @@ class FavoriteScreen extends StatelessWidget {
                 height: 20.h,
               ),
               Text(
-                "Рекламный блок",
+                LocaleKeys.ads_bloc.tr(),
                 style: Theme.of(context).textTheme.titleSmall!.copyWith(
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,

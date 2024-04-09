@@ -3,10 +3,10 @@ import 'package:chinni_buyumlar/app/constants/imports.dart';
 class TextFieldFilter extends StatelessWidget {
   const TextFieldFilter({
     super.key,
-    required this.controller,
+    this.controller,
     required this.text, this.func,
   });
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String text;
   final Function(String)? func;
 

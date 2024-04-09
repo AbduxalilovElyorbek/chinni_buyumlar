@@ -1,5 +1,4 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:flutter/material.dart';
 
 class StarRating extends StatefulWidget {
   const StarRating({super.key});
@@ -19,40 +18,43 @@ class _StarRatingState extends State<StarRating> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        GestureDetector(
-          child: SvgPicture.asset(
-            _rating >= 1 ? AppIcons.filledStar : AppIcons.star,
+    return SizedBox(
+      width: 120.w,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          GestureDetector(
+            child: SvgPicture.asset(
+              _rating >= 1 ? AppIcons.filledStar : AppIcons.star,
+            ),
+            onTap: () => rate(1),
           ),
-          onTap: () => rate(1),
-        ),
-        GestureDetector(
-          child: SvgPicture.asset(
-            _rating >= 2 ? AppIcons.filledStar : AppIcons.star,
+          GestureDetector(
+            child: SvgPicture.asset(
+              _rating >= 2 ? AppIcons.filledStar : AppIcons.star,
+            ),
+            onTap: () => rate(2),
           ),
-          onTap: () => rate(2),
-        ),
-        GestureDetector(
-          child: SvgPicture.asset(
-            _rating >= 3 ? AppIcons.filledStar : AppIcons.star,
+          GestureDetector(
+            child: SvgPicture.asset(
+              _rating >= 3 ? AppIcons.filledStar : AppIcons.star,
+            ),
+            onTap: () => rate(3),
           ),
-          onTap: () => rate(3),
-        ),
-        GestureDetector(
-          child: SvgPicture.asset(
-            _rating >= 4 ? AppIcons.filledStar : AppIcons.star,
+          GestureDetector(
+            child: SvgPicture.asset(
+              _rating >= 4 ? AppIcons.filledStar : AppIcons.star,
+            ),
+            onTap: () => rate(4),
           ),
-          onTap: () => rate(4),
-        ),
-        GestureDetector(
-          child: SvgPicture.asset(
-            _rating >= 5 ? AppIcons.filledStar : AppIcons.star,
+          GestureDetector(
+            child: SvgPicture.asset(
+              _rating >= 5 ? AppIcons.filledStar : AppIcons.star,
+            ),
+            onTap: () => rate(5),
           ),
-          onTap: () => rate(5),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

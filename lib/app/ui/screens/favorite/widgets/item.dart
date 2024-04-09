@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class FavoriteItem extends StatelessWidget {
   const FavoriteItem({super.key});
@@ -6,7 +7,7 @@ class FavoriteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 116.h,
+      height: 150.h,
       padding: EdgeInsets.symmetric(
         horizontal: 16.w,
         vertical: 10.h,
@@ -58,7 +59,7 @@ class FavoriteItem extends StatelessWidget {
                     height: 10.h,
                   ),
                   Text(
-                    "1.200.000 UZS",
+                    "1.200.000 ${LocaleKeys.sum.tr()}",
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           fontWeight: FontWeight.w400,
                           color: dark.withOpacity(0.5),
@@ -67,7 +68,7 @@ class FavoriteItem extends StatelessWidget {
                         ),
                   ),
                   Text(
-                    "700.000 UZS",
+                    "700.000 ${LocaleKeys.sum.tr()}",
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w400,

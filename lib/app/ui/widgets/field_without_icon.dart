@@ -3,14 +3,14 @@ import 'package:chinni_buyumlar/app/constants/imports.dart';
 class TextFieldWithoutIconWidget extends StatefulWidget {
   const TextFieldWithoutIconWidget({
     super.key,
-    required this.controller,
+     this.controller,
     required this.text,
     this.func,
     this.icon,
     required this.hasPref,
     this.isCenter,
   });
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String text;
   final bool hasPref;
   final VoidCallback? func;

@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -80,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           );
                         },
                         child: Text(
-                          "Забыли пароль",
+                          LocaleKeys.forget_password.tr(),
                           style:
                               Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     decoration: TextDecoration.underline,
@@ -95,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       ButtonWidget(
-                        text: "Войти",
+                        text: LocaleKeys.enter.tr(),
                         start: Alignment.centerLeft,
                         end: Alignment.centerRight,
                         func: () {
@@ -121,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           );
                         },
                         child: Text(
-                          "Регистрация",
+                          LocaleKeys.register.tr(),
                           style: Theme.of(context).textTheme.bodyLarge!,
                         ),
                       ),

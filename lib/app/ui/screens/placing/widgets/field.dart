@@ -3,9 +3,9 @@ import 'package:chinni_buyumlar/app/constants/imports.dart';
 class PlacingFieldWidget extends StatefulWidget {
   const PlacingFieldWidget({
     super.key,
-    required this.controller,
+     this.controller,
   });
-  final TextEditingController controller;
+  final TextEditingController? controller;
 
   @override
   State<PlacingFieldWidget> createState() => _PlacingFieldWidgetState();

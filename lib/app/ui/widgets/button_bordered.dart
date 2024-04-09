@@ -13,6 +13,9 @@ class ButtonBorderedWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+        padding: EdgeInsets.symmetric(
+          horizontal: 20.w,
+        ),
         splashFactory: NoSplash.splashFactory,
         backgroundColor: transparent,
         elevation: 0,

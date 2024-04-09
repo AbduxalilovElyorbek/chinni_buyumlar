@@ -1,5 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/orders/orders_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -9,7 +9,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Профиль",
+          LocaleKeys.profile.tr(),
           style: Theme.of(context).textTheme.titleSmall!.copyWith(
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
@@ -20,6 +20,7 @@ class ProfileScreen extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
@@ -42,13 +43,24 @@ class ProfileScreen extends StatelessWidget {
                               fontWeight: FontWeight.w700,
                             ),
                       ),
-                      Text(
-                        "Изменить личные данные",
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w400,
-                              color: lightGreyText,
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const EditProfileScreen(),
                             ),
+                          );
+                        },
+                        child: Text(
+                          LocaleKeys.change_info.tr(),
+                          style:
+                              Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w400,
+                                    color: lightGreyText,
+                                  ),
+                        ),
                       ),
                     ],
                   ),
@@ -59,7 +71,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               ProfileNavigationItem(
                 icon: AppIcons.profileShop,
-                title: "Мои заказы",
+                title: LocaleKeys.my_orders.tr(),
                 func: () {
                   Navigator.push(
                     context,
@@ -74,49 +86,117 @@ class ProfileScreen extends StatelessWidget {
               ),
               ProfileNavigationItem(
                 icon: AppIcons.settings,
-                title: "Настройки",
+                title: LocaleKeys.settings.tr(),
+                func: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SettingsScreen(),
+                    ),
+                  );
+                },
               ),
               SizedBox(
                 height: 8.h,
               ),
               ProfileNavigationItem(
                 icon: AppIcons.location,
-                title: "Мы на карте",
+                title: LocaleKeys.map_location.tr(),
               ),
               SizedBox(
                 height: 8.h,
               ),
               ProfileNavigationItem(
                 icon: AppIcons.help,
-                title: "Техническая поддержка",
+                title: LocaleKeys.help.tr(),
+                func: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HelpScreen(),
+                    ),
+                  );
+                },
               ),
               SizedBox(
                 height: 8.h,
               ),
               ProfileNavigationItem(
                 icon: AppIcons.discount,
-                title: "Бонусная программа",
+                title: LocaleKeys.bonus.tr(),
+                func: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BonusScreen(),
+                    ),
+                  );
+                },
               ),
               SizedBox(
                 height: 8.h,
               ),
               ProfileNavigationItem(
                 icon: AppIcons.transactions,
-                title: "Транзакции",
+                title: LocaleKeys.transactions.tr(),
               ),
               SizedBox(
                 height: 8.h,
               ),
               ProfileNavigationItem(
                 icon: AppIcons.notifications,
-                title: "Уведомления",
+                title: LocaleKeys.notifications.tr(),
+                func: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const NotificationsScreen(),
+                    ),
+                  );
+                },
               ),
               SizedBox(
                 height: 8.h,
               ),
               ProfileNavigationItem(
                 icon: AppIcons.message,
-                title: "Сообщения",
+                title: LocaleKeys.sms,
+                func: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MessagesScreen(),
+                    ),
+                  );
+                },
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  );
+                },
+                child: Row(
+                  children: [
+                    SvgPicture.asset(AppIcons.exit),
+                    SizedBox(
+                      width: 10.w,
+                    ),
+                    Text(
+                      LocaleKeys.account_logout.tr(),
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            fontWeight: FontWeight.w500,
+                            color: lightGreyText,
+                          ),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).padding.bottom + 35.h,

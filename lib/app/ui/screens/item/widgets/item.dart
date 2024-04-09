@@ -1,6 +1,4 @@
-import 'package:chinni_buyumlar/app/constants/images/image.dart';
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:flutter/material.dart';
 
 class CommentItem extends StatelessWidget {
   const CommentItem({super.key});

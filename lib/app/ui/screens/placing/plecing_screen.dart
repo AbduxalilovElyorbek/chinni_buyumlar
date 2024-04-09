@@ -1,5 +1,7 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/placing/choose_place.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+
 
 class PlacingScreen extends StatefulWidget {
   const PlacingScreen({super.key});
@@ -28,7 +30,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Оформление заказа",
+                LocaleKeys.placing_order.tr(),
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       fontWeight: FontWeight.w700,
                     ),
@@ -37,7 +39,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                 height: 14.h,
               ),
               Text(
-                "Способ доставки",
+                LocaleKeys.delivery_method.tr(),
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontSize: 16.sp,
                       color: dropDown,
@@ -48,7 +50,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                 height: 10.h,
               ),
               PlacingChooseButtonWidget(
-                title: "Пункты выдачи",
+                title: LocaleKeys.pickup_point.tr(),
                 isActive: _isChoosed,
                 func: () {
                   _isChoosed = !_isChoosed;
@@ -59,7 +61,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                 height: 8.h,
               ),
               PlacingChooseButtonWidget(
-                title: "Доставка курьером",
+                title: LocaleKeys.courier_delivery.tr(),
                 isActive: !_isChoosed,
                 func: () {
                   _isChoosed = !_isChoosed;
@@ -70,7 +72,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                 height: 20.h,
               ),
               Text(
-                "Пункт самовывоза",
+                LocaleKeys.pickup_point.tr(),
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontSize: 16.sp,
                       color: dropDown,
@@ -89,7 +91,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                     ),
                   );
                 },
-                text: "Выбрать пункт самовызова",
+                text: LocaleKeys.select_pickup_point.tr(),
                 start: Alignment.bottomCenter,
                 end: Alignment.topCenter,
               ),
@@ -117,12 +119,17 @@ class _PlacingScreenState extends State<PlacingScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Срок доставки будет расчитан после выбора\nпункт самовывоза",
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            color: lightGreyText,
-                            fontWeight: FontWeight.w400,
-                          ),
+                    SizedBox(
+                      width: 325.w,
+                      
+                      child: Text(
+                        LocaleKeys.delivery_time.tr(),
+                        maxLines: 2,
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              color: lightGreyText,
+                              fontWeight: FontWeight.w400,
+                            ),
+                      ),
                     ),
                     SizedBox(
                       height: 20.h,
@@ -171,7 +178,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                 height: 10.h,
               ),
               Text(
-                "Получатель",
+                LocaleKeys.getter.tr(),
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontSize: 16.sp,
                       color: dropDown,
@@ -203,30 +210,29 @@ class _PlacingScreenState extends State<PlacingScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Получать буду не я",
+                          LocaleKeys.i_am_not_recipient.tr(),
                           style:
                               Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     color: lightGreyText,
                                     fontWeight: FontWeight.w400,
                                   ),
                         ),
-                        Switch(
-                          onChanged: (value) {
+                        SwitcherWidget(
+                          borderColor: border,
+                          dotColor: switcherColor,
+                          isActive: _isActive,
+                          func: (value) {
                             _isActive = !_isActive;
                             setState(() {});
                           },
-                          activeTrackColor: border,
-                          activeColor: switcherColor,
-                          inactiveTrackColor: border,
-                          value: _isActive,
-                        )
+                        ),
                       ],
                     ),
                     SizedBox(
                       height: 10.h,
                     ),
                     Text(
-                      "Тариф доставки",
+                      LocaleKeys.delivery_rate.tr(),
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontSize: 16.sp,
                             color: dropDown,
@@ -245,7 +251,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                       height: 10.h,
                     ),
                     Text(
-                      "Логистическая компания",
+                      LocaleKeys.logistic_company.tr(),
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontSize: 16.sp,
                             color: dropDown,
@@ -255,16 +261,16 @@ class _PlacingScreenState extends State<PlacingScreen> {
                     SizedBox(
                       height: 10.h,
                     ),
-                    const DropDownButton(
+                     DropDownButton(
                       items: [
-                        "Компания",
+                        LocaleKeys.company.tr(),
                       ],
                     ),
                     SizedBox(
                       height: 10.h,
                     ),
                     Text(
-                      "Тип оплаты",
+                      LocaleKeys.payment_type.tr(),
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontSize: 16.sp,
                             color: dropDown,
@@ -274,9 +280,9 @@ class _PlacingScreenState extends State<PlacingScreen> {
                     SizedBox(
                       height: 10.h,
                     ),
-                    const DropDownButton(
+                    DropDownButton(
                       items: [
-                        "Наличные",
+                        LocaleKeys.cash.tr(),
                       ],
                     ),
                     SizedBox(
@@ -286,7 +292,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Бонусами",
+                          LocaleKeys.bonuses.tr(),
                           style:
                               Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     fontSize: 16.sp,
@@ -315,7 +321,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                       height: 10.h,
                     ),
                     Text(
-                      "Наименование учреждения",
+                      LocaleKeys.name_institution.tr(),
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontSize: 16.sp,
                             color: dropDown,
@@ -332,7 +338,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                       height: 10.h,
                     ),
                     Text(
-                      "Имя",
+                      LocaleKeys.name.tr(),
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontSize: 16.sp,
                             color: dropDown,
@@ -349,7 +355,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                       height: 10.h,
                     ),
                     Text(
-                      "Фамилия",
+                      LocaleKeys.surename.tr(),
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontSize: 16.sp,
                             color: dropDown,
@@ -383,7 +389,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                       height: 10.h,
                     ),
                     Text(
-                      "Номер телефона",
+                      LocaleKeys.phone_number.tr(),
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontSize: 16.sp,
                             color: dropDown,
@@ -400,7 +406,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                       height: 20.h,
                     ),
                     PlecingDropDownWidget(
-                      title: "+ Дополнительный номер телефона",
+                      title: LocaleKeys.plus.tr(),
                       functions: [
                         SizedBox(
                           height: 10.h,
@@ -423,7 +429,7 @@ class _PlacingScreenState extends State<PlacingScreen> {
                 func: () {
                   Navigator.pop(context);
                 },
-                text: "Оформить заказ",
+                text: LocaleKeys.checkout.tr(),
                 start: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),

@@ -1,6 +1,6 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/favorite/favorite_screen.dart';
-import 'package:chinni_buyumlar/app/ui/screens/profile/profile_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
+
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});
@@ -10,8 +10,8 @@ class NavigationScreen extends StatefulWidget {
 }
 
 class _NavigationScreenState extends State<NavigationScreen> {
-  late int index = 0;
-  late int choosedIcon = 0;
+  int index = 0;
+  int choosedIcon = 0;
 
   LinearGradient backgroundColor = LinearGradient(
     begin: Alignment.topCenter,
@@ -79,7 +79,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
                 setState(() {});
               },
-              title: "Главная",
+              title: LocaleKeys.home.tr(),
             ),
             BottomItem(
               icon: choosedIcon != 1 ? AppIcons.heart : AppIcons.choosedHeart,
@@ -89,7 +89,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
                 setState(() {});
               },
-              title: "Избранное",
+              title: LocaleKeys.favorite.tr(),
             ),
             const SizedBox(),
             const SizedBox(),
@@ -108,7 +108,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
                     setState(() {});
                   },
-                  title: "Корзина",
+                  title: LocaleKeys.basket.tr(),
                 ),
                 Positioned(
                   right: 1,
@@ -140,7 +140,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
                 setState(() {});
               },
-              title: "Профиль",
+              title: LocaleKeys.profile.tr(),
             ),
           ],
         ),

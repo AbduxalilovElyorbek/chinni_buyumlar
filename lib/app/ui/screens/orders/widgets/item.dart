@@ -1,12 +1,12 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
 
-class OrderItem extends StatelessWidget {
-  const OrderItem({super.key});
+class OrdersItem extends StatelessWidget {
+  const OrdersItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 290.h,
+      // height: 290.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.r),
         color: white,
@@ -195,7 +195,7 @@ class OrderItem extends StatelessWidget {
                 SizedBox(
                   width: 70.w,
                   height: 35.h,
-                  child: ButtonWidget(
+                  child: const ButtonWidget(
                     text: "Детали",
                     start: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -203,7 +203,10 @@ class OrderItem extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
         ],
       ),
     );

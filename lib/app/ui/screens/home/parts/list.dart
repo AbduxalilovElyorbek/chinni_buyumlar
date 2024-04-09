@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ListWidget extends StatelessWidget {
   const ListWidget({
@@ -41,7 +42,7 @@ class ListWidget extends StatelessWidget {
                   side: BorderSide(color: green),
                 ),
                 child: Text(
-                  "Все",
+                  LocaleKeys.all.tr(),
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: lightGreen,
                         fontSize: 16.sp,
@@ -56,7 +57,7 @@ class ListWidget extends StatelessWidget {
           height: 20.h,
         ),
         SizedBox(
-          height: 360.h,
+          height: 400.h,
           width: double.infinity,
           child: ListView.separated(
             shrinkWrap: true,
@@ -75,7 +76,12 @@ class ListWidget extends StatelessWidget {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemScreen(),),);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ItemScreen(),
+                    ),
+                  );
                 },
                 child: DefItemWidget(
                   hasDiscount: hasDiscount,

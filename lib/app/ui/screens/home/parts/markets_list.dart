@@ -1,5 +1,6 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
 import 'package:chinni_buyumlar/app/ui/screens/home/widgets/market_item.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class MarketsListWidget extends StatelessWidget {
   const MarketsListWidget({
@@ -38,7 +39,7 @@ class MarketsListWidget extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  "Все",
+                  LocaleKeys.all.tr(),
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: lightGreen,
                         fontSize: 16.sp,
@@ -53,7 +54,7 @@ class MarketsListWidget extends StatelessWidget {
           height: 20.h,
         ),
         SizedBox(
-          height: 310.h,
+          height: 320.h,
           width: double.infinity,
           child: ListView.separated(
             shrinkWrap: true,

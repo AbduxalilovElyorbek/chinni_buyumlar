@@ -1,6 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/orders/parts/list.dart';
-import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class MyOrdersScreen extends StatefulWidget {
   const MyOrdersScreen({super.key});
@@ -33,21 +32,18 @@ class _MyOrdersScreenState extends State<MyOrdersScreen>
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: const BackWidget(),
+        title: Text(
+          LocaleKeys.my_orders.tr(),
+          style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                fontSize: 20.sp,
+                fontWeight: FontWeight.w700,
+              ),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           children: [
-            Text(
-              "Мои заказы",
-              style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w700,
-                  ),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
             TabBar(
               controller: _controller,
               dividerColor: transparent,
@@ -147,14 +143,15 @@ class _MyOrdersScreenState extends State<MyOrdersScreen>
             ),
             Expanded(
               child: TabBarView(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 controller: _controller,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w),
-                    child: const OrderList(),
+                children: const [
+                  SingleChildScrollView(
+                    child: OrderList(),
                   ),
-                  OrderItem(),
+                  SingleChildScrollView(
+                    child: OrderList(),
+                  ),
                 ],
               ),
             ),

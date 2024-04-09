@@ -16,7 +16,6 @@ class DefItemWidget extends StatefulWidget {
 }
 
 class _DefItemWidgetState extends State<DefItemWidget> {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,6 +36,7 @@ class _DefItemWidgetState extends State<DefItemWidget> {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Stack(
             children: [
@@ -128,6 +128,9 @@ class _DefItemWidgetState extends State<DefItemWidget> {
                 ButtonBorderedWidget(
                   text: 'В корзину',
                   icon: AppIcons.shop,
+                ),
+                SizedBox(
+                  height: 20.h,
                 ),
               ],
             ),

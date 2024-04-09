@@ -1,5 +1,4 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/home/widgets/favorite.dart';
 
 class NewsItemWidget extends StatefulWidget {
   const NewsItemWidget({
@@ -70,7 +69,7 @@ class _NewsItemWidgetState extends State<NewsItemWidget> {
                   ),
                 ),
                 SizedBox(
-                  height: 15.h,
+                  height: 20.h,
                 ),
                 const ButtonBorderedWidget(
                   text: 'Подробнее',

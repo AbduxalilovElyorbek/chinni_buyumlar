@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class SearchTextFieldWidget extends StatelessWidget {
   const SearchTextFieldWidget({super.key});
@@ -25,7 +26,7 @@ class SearchTextFieldWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(45.r),
             borderSide: BorderSide(color: grey, width: 2),
           ),
-          hintText: "Я ищу...",
+          hintText: LocaleKeys.search.tr(),
           contentPadding: EdgeInsets.symmetric(vertical: 12.h),
           hintStyle: TextStyle(
             fontSize: 16.sp,

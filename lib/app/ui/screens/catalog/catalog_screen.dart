@@ -1,5 +1,4 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/catalog/parts/catalog_list.dart';
 
 class CatalogScreen extends StatelessWidget {
   const CatalogScreen({super.key});

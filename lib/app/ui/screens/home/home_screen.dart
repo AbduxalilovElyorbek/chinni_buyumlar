@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -44,13 +45,13 @@ class HomeScreen extends StatelessWidget {
           children: [
             ListWidget(
               showDiscount: true,
-              title: "Популярные товары",
+              title: LocaleKeys.popular_products.tr(),
               func: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const PressedScreen(
-                      title: "Популярные товары",
+                    builder: (context) => PressedScreen(
+                      title: LocaleKeys.popular_products.tr(),
                       type: "product",
                     ),
                   ),
@@ -65,7 +66,7 @@ class HomeScreen extends StatelessWidget {
               height: 15.h,
             ),
             ListWidget(
-              title: "Товары со скидкой",
+              title: LocaleKeys.discount_products.tr(),
               color: orange,
               showDiscount: true,
               hasDiscount: "-10%",
@@ -73,8 +74,8 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const PressedScreen(
-                      title: "Товары со скидкой",
+                    builder: (context) => PressedScreen(
+                      title: LocaleKeys.discount_products.tr(),
                       type: "product",
                     ),
                   ),
@@ -86,15 +87,15 @@ class HomeScreen extends StatelessWidget {
             ),
             ListWidget(
               showDiscount: true,
-              title: "Новые товары",
+              title: LocaleKeys.new_products.tr(),
               color: lightGreen,
               hasDiscount: "Новый",
               func: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const PressedScreen(
-                      title: "Новые товары",
+                    builder: (context) => PressedScreen(
+                      title: LocaleKeys.new_products.tr(),
                       type: "product",
                     ),
                   ),
@@ -106,15 +107,15 @@ class HomeScreen extends StatelessWidget {
             ),
             ListWidget(
               showDiscount: false,
-              title: "Товары под заказ",
+              title: LocaleKeys.order_products.tr(),
               color: lightGreen,
               hasDiscount: "Под заказ",
               func: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const PressedScreen(
-                      title: "Товары под заказ",
+                    builder: (context) =>  PressedScreen(
+                      title: LocaleKeys.order_products.tr(),
                       type: "product",
                     ),
                   ),
@@ -125,13 +126,13 @@ class HomeScreen extends StatelessWidget {
               height: 15.h,
             ),
             MarketsListWidget(
-              title: "Популярные магазины",
+              title: LocaleKeys.popular_markets.tr(),
               func: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const PressedScreen(
-                      title: "Популярные магазины",
+                    builder: (context) => PressedScreen(
+                      title: LocaleKeys.popular_markets.tr(),
                       type: "markets",
                     ),
                   ),
@@ -142,13 +143,13 @@ class HomeScreen extends StatelessWidget {
               height: 15.h,
             ),
             NewsListWidget(
-              title: "Новости",
+              title: LocaleKeys.news.tr(),
               func: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const PressedScreen(
-                      title: "Новости",
+                    builder: (context) => PressedScreen(
+                      title: LocaleKeys.news.tr(),
                       type: "news",
                     ),
                   ),

@@ -3,11 +3,11 @@ import 'package:chinni_buyumlar/app/constants/imports.dart';
 class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget({
     super.key,
-    required this.controller,
+     this.controller,
     required this.value,
     required this.isIcon,
   });
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String value;
   final bool isIcon;
 

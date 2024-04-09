@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -19,7 +20,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     final DateTime? selected = await showDatePicker(
       context: context,
       initialDate: _selectedDate,
-      firstDate: DateTime(2000),
+      firstDate: DateTime(1900),
       lastDate: DateTime.now(),
     );
     if (selected != null && selected != _selectedDate) {
@@ -73,7 +74,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Column(
                   children: [
                     Text(
-                      "Регистрация",
+                      LocaleKeys.register.tr(),
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             fontWeight: FontWeight.w400,
                           ),
@@ -97,7 +98,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: TextFieldWithoutIconWidget(
                         hasPref: false,
                         controller: name,
-                        text: "Имя",
+                        text: LocaleKeys.name.tr(),
                       ),
                     ),
                     SizedBox(
@@ -108,7 +109,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: TextFieldWithoutIconWidget(
                         hasPref: false,
                         controller: sureName,
-                        text: "Фамилия",
+                        text: LocaleKeys.surename.tr(),
                       ),
                     ),
                     SizedBox(
@@ -119,7 +120,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: TextFieldWithoutIconWidget(
                         hasPref: false,
                         controller: patronymic,
-                        text: "Отчество",
+                        text: LocaleKeys.middle_name.tr(),
                       ),
                     ),
                     SizedBox(
@@ -131,7 +132,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         controller: patronymic,
                         hasPref: false,
                         text: _selectedDate?.toString().split(" ").first ??
-                            'Дата рождения',
+                            LocaleKeys.birth_date.tr(),
                         func: () {
                           _selectDate(context);
                         },
@@ -153,11 +154,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Согласен с ",
+                            text: LocaleKeys.agree_with.tr(),
                             style: Theme.of(context).textTheme.bodyMedium!,
                           ),
                           TextSpan(
-                            text: "политикой конфиденциальности",
+                            text: LocaleKeys.agree_with_politics.tr(),
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyMedium!
@@ -176,7 +177,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 40.w),
                   child: ButtonWidget(
-                    text: "Далее",
+                    text: LocaleKeys.next.tr(),
                     start: Alignment.centerLeft,
                     end: Alignment.centerRight,
                     func: () {

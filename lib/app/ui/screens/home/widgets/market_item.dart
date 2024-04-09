@@ -1,5 +1,4 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/home/widgets/favorite.dart';
 
 class MarketItemWidget extends StatefulWidget {
   const MarketItemWidget({
@@ -15,11 +14,10 @@ class MarketItemWidget extends StatefulWidget {
 }
 
 class _MarketItemWidgetState extends State<MarketItemWidget> {
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180.h,
+      width: 190.w,
       decoration: BoxDecoration(
         color: white,
         borderRadius: BorderRadius.circular(

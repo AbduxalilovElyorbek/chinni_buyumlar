@@ -1,5 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/item/parts/items.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class CommentsScreen extends StatelessWidget {
   const CommentsScreen({super.key});
@@ -20,7 +20,7 @@ class CommentsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Оценка и отзывы",
+                LocaleKeys.comments.tr(),
                 style: Theme.of(context).textTheme.titleSmall!.copyWith(
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,

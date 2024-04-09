@@ -18,9 +18,8 @@ class GridListWidget extends StatelessWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: type == "categories" ? 3 : 2,
-          mainAxisExtent:
-              type == "categories" && type == "news" ? 160.h : 320.h,
+          crossAxisCount: 2,
+          mainAxisExtent: type == "news" ? 160.h : 350.h,
           crossAxisSpacing: 10.h,
           mainAxisSpacing: 10.w,
         ),
@@ -28,7 +27,7 @@ class GridListWidget extends StatelessWidget {
         itemBuilder: (context, index) {
           if (type == "product") {
             return SizedBox(
-              height: 280.h,
+              height: 400.h,
               child: const DefItemWidget(
                 isDiscount: true,
               ),

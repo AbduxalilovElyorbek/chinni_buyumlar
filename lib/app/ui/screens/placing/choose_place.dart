@@ -1,5 +1,4 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ChooseMap extends StatelessWidget {
   const ChooseMap({super.key});
@@ -17,7 +16,7 @@ class ChooseMap extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 5.w),
               child: Text(
-                "Пункт выдачи",
+                LocaleKeys.pickup_points,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       fontWeight: FontWeight.w700,
                     ),

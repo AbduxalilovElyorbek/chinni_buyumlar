@@ -1,4 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class BasketItem extends StatefulWidget {
   const BasketItem({super.key});
@@ -8,7 +9,7 @@ class BasketItem extends StatefulWidget {
 }
 
 class _BasketItemState extends State<BasketItem> {
-  late int count = 1;
+ int count = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +57,7 @@ class _BasketItemState extends State<BasketItem> {
                           height: 20.h,
                         ),
                         Text(
-                          "1.200.000 UZS",
+                          "1.200.000 ${LocaleKeys.sum.tr()}",
                           style:
                               Theme.of(context).textTheme.bodyMedium!.copyWith(
                                     fontWeight: FontWeight.w400,
@@ -66,7 +67,7 @@ class _BasketItemState extends State<BasketItem> {
                                   ),
                         ),
                         Text(
-                          "700.000 UZS",
+                          "700.000 ${LocaleKeys.sum.tr()}",
                           style:
                               Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     fontSize: 18.sp,

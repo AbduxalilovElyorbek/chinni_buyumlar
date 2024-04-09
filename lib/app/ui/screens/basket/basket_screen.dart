@@ -1,5 +1,5 @@
 import 'package:chinni_buyumlar/app/constants/imports.dart';
-import 'package:chinni_buyumlar/app/ui/screens/placing/plecing_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class BasketScreen extends StatefulWidget {
   const BasketScreen({super.key});
@@ -14,7 +14,7 @@ class _BasketScreenState extends State<BasketScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Корзина",
+          LocaleKeys.basket.tr(),
           style: Theme.of(context).textTheme.titleLarge!.copyWith(
                 fontWeight: FontWeight.w700,
               ),
@@ -24,9 +24,10 @@ class _BasketScreenState extends State<BasketScreen> {
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Детали заказа",
+                LocaleKeys.order_details.tr(),
                 style: Theme.of(context).textTheme.titleSmall!.copyWith(
                       color: lightDark,
                       fontWeight: FontWeight.w700,
@@ -48,7 +49,7 @@ class _BasketScreenState extends State<BasketScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Товары ( 1 )",
+                          "${LocaleKeys.products.tr()} ( 1 )",
                           style:
                               Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     color: dropDown,
@@ -56,7 +57,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                   ),
                         ),
                         Text(
-                          "36.000.000 сум",
+                          "36.000.000 ${LocaleKeys.sum.tr()}",
                           style:
                               Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     color: dark,
@@ -72,7 +73,7 @@ class _BasketScreenState extends State<BasketScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Доставка",
+                          LocaleKeys.delivery.tr(),
                           style:
                               Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     color: dropDown,
@@ -80,7 +81,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                   ),
                         ),
                         Text(
-                          "30.000 сум",
+                          "30.000 ${LocaleKeys.sum.tr()}",
                           style:
                               Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     color: dark,
@@ -96,7 +97,7 @@ class _BasketScreenState extends State<BasketScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Итого",
+                        LocaleKeys.total.tr(),
                           style:
                               Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     fontWeight: FontWeight.w700,
@@ -104,7 +105,7 @@ class _BasketScreenState extends State<BasketScreen> {
                                   ),
                         ),
                         Text(
-                          "36.000.000 сум",
+                          "36.000.000 ${LocaleKeys.sum.tr}",
                           style:
                               Theme.of(context).textTheme.bodyLarge!.copyWith(
                                     color: dark,
@@ -130,7 +131,7 @@ class _BasketScreenState extends State<BasketScreen> {
                     ),
                   );
                 },
-                text: "Продолжить оформление",
+                text: LocaleKeys.continue_checkout.tr(),
                 start: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
