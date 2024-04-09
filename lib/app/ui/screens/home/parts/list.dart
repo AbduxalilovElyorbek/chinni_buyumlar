@@ -62,16 +62,12 @@ class ListWidget extends StatelessWidget {
           height: 20.h,
         ),
         SizedBox(
-          height: 400.h,
+          height: 385.h,
           width: double.infinity,
           child: ListView.separated(
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.only(
-              left: 20.w,
-              bottom: 5.h,
-              top: 5.h,
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
             itemCount: 5,
             separatorBuilder: (context, index) {
               return SizedBox(
